@@ -1,0 +1,33 @@
+Problem: Minimum Path Sum
+
+Problem Statement:
+You are given an m × n grid filled with non-negative numbers.
+
+You start at the top-left cell (0,0) and want to reach the
+bottom-right cell (m-1, n-1).
+
+You can only move:
+- Right
+- Down
+
+Task:
+Find the path with the minimum sum of numbers along the path.
+
+Approach:
+- Use recursion to explore two possible moves:
+    1. Move right
+    2. Move down
+- Use memoization (DP array) to store already computed results.
+- If the index goes outside the grid, return a large value.
+- The answer for each cell is:
+    grid[i][j] + min(right, down)
+
+Algorithm Used:
+- Recursion
+- Dynamic Programming (Top-Down / Memoization)
+
+Time Complexity:
+- O(N × M)
+
+Space Complexity:
+- O(N × M)
