@@ -1,0 +1,27 @@
+Problem: Maximal Square
+
+Problem Statement:
+You are given an m × n binary matrix filled with '0's and '1's.
+
+Task:
+Find the largest square containing only '1's and return its area.
+
+Approach:
+- For each cell, try to form a square starting at that cell.
+- Recursively check three directions:
+    1. Right
+    2. Down
+    3. Diagonal
+- If the current cell contains '1':
+    size = 1 + min(right, down, diagonal)
+- Track the maximum square side length.
+
+Algorithm Used:
+- Recursion
+- Grid Dynamic Programming Pattern
+
+Time Complexity:
+- Exponential (due to repeated calculations)
+
+Space Complexity:
+- O(N + M) recursion stack
