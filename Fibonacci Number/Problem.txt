@@ -1,0 +1,27 @@
+Problem: Fibonacci Number
+
+Problem Statement:
+The Fibonacci numbers form a sequence where each number is the sum
+of the two preceding ones.
+
+Fibonacci sequence:
+0, 1, 1, 2, 3, 5, 8, 13, ...
+
+Task:
+Given an integer n, return the nth Fibonacci number.
+
+Approach:
+- Use recursion with memoization.
+- Store already computed Fibonacci values in a DP array.
+- Before computing fib(n), check if it has already been calculated.
+- This avoids repeated recursive calls.
+
+Algorithm Used:
+- Recursion
+- Dynamic Programming (Top-Down / Memoization)
+
+Time Complexity:
+- O(N)
+
+Space Complexity:
+- O(N)
