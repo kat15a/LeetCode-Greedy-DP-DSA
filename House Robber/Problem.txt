@@ -1,0 +1,32 @@
+Problem: House Robber
+
+Problem Statement:
+You are a professional robber planning to rob houses along a street.
+
+Each house has a certain amount of money. The only constraint is that
+adjacent houses cannot be robbed on the same night.
+
+Task:
+Return the maximum amount of money you can rob without robbing
+two adjacent houses.
+
+Approach:
+- At each house we have two choices:
+    1. Rob the current house → add its value and skip the previous house.
+    2. Do not rob the current house → take the value from the previous house.
+- Use Dynamic Programming to store the maximum amount up to each house.
+
+Transition:
+dp[i] = max(
+            nums[i] + dp[i-2],   // rob current house
+            dp[i-1]              // skip current house
+          )
+
+Algorithm Used:
+- Dynamic Programming (Tabulation)
+
+Time Complexity:
+- O(N)
+
+Space Complexity:
+- O(N)
