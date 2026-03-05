@@ -1,0 +1,37 @@
+Problem: Unique Paths II
+
+Problem Statement:
+You are given an m × n grid where:
+
+- 0 represents an empty cell
+- 1 represents an obstacle
+
+A robot starts at the top-left corner (0,0) and wants to reach
+the bottom-right corner (m-1,n-1).
+
+The robot can only move:
+- Right
+- Down
+
+Task:
+Return the number of unique paths to reach the destination
+without stepping on obstacles.
+
+Approach:
+- Use recursion with memoization (DP).
+- If the current cell contains an obstacle → return 0.
+- If the robot reaches the starting cell → return 1.
+- Otherwise compute paths from:
+  - Up (m-1, n)
+  - Left (m, n-1)
+- Store computed results in dp[][] to avoid recomputation.
+
+Algorithm Used:
+- Recursion
+- Dynamic Programming (Top-Down / Memoization)
+
+Time Complexity:
+- O(M × N)
+
+Space Complexity:
+- O(M × N)
