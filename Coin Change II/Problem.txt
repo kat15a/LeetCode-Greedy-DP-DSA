@@ -1,0 +1,31 @@
+Problem: Coin Change II
+
+Problem Statement:
+You are given an integer array coins representing different coin
+denominations and an integer amount representing a total amount of money.
+
+Task:
+Return the number of combinations that make up that amount.
+
+You may use each coin unlimited times.
+
+If the amount cannot be formed, return 0.
+
+Approach:
+- This problem follows the Unbounded Knapsack pattern.
+- At each coin we have two choices:
+    1. Not pick the coin → move to the previous index.
+    2. Pick the coin → stay at the same index since coins can be reused.
+- Use recursion with memoization to avoid recomputation.
+- Count all valid combinations.
+
+Algorithm Used:
+- Recursion
+- Dynamic Programming (Top-Down / Memoization)
+- Unbounded Knapsack Pattern
+
+Time Complexity:
+- O(N × Amount)
+
+Space Complexity:
+- O(N × Amount)
