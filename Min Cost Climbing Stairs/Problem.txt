@@ -1,0 +1,36 @@
+Problem: Min Cost Climbing Stairs
+
+Problem Statement:
+You are given an integer array cost where cost[i] is the cost
+of the ith step on a staircase.
+
+Once you pay the cost, you can climb either:
+- one step
+- two steps
+
+You can start from step 0 or step 1.
+
+Task:
+Return the minimum cost to reach the top of the floor.
+
+Approach:
+- Use recursion with memoization.
+- To reach step n, we must come from:
+  - step n-1
+  - step n-2
+- The minimum cost for each step is:
+  
+  cost[n] + min(dp[n-1], dp[n-2])
+
+- Use a DP array to store previously computed results
+  and avoid recomputation.
+
+Algorithm Used:
+- Recursion
+- Dynamic Programming (Top-Down / Memoization)
+
+Time Complexity:
+- O(N)
+
+Space Complexity:
+- O(N)
