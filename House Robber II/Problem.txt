@@ -1,0 +1,32 @@
+Problem: Maximum Value Robbery with Color Constraint
+
+Problem Statement:
+You are given two arrays:
+
+- nums[i] → amount of money in the ith house
+- colors[i] → color of the ith house
+
+Task:
+Find the maximum amount of money you can rob.
+
+Rules:
+- You cannot rob two adjacent houses if they have the same color.
+- If adjacent houses have different colors, they can both be robbed.
+
+Approach:
+- At each index we have two choices:
+  1. Rob the current house
+     - If next house has a different color → move to i+1
+     - If next house has the same color → skip next house → move to i+2
+  2. Skip the current house → move to i+1
+- Use recursion with memoization (DP array) to store results.
+
+Algorithm Used:
+- Recursion
+- Dynamic Programming (Top-Down / Memoization)
+
+Time Complexity:
+- O(N)
+
+Space Complexity:
+- O(N)
