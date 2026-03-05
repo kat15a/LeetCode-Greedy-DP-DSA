@@ -1,0 +1,31 @@
+Problem: N-th Tribonacci Number
+
+Problem Statement:
+The Tribonacci sequence is defined as follows:
+
+T0 = 0  
+T1 = 1  
+T2 = 1  
+
+For n ≥ 3:
+
+Tn = T(n-1) + T(n-2) + T(n-3)
+
+Task:
+Given an integer n, return the value of Tn.
+
+Approach:
+- Use recursion to compute the Tribonacci number.
+- Store previously computed values in a DP array (memoization).
+- Before calculating Tn, check if it is already stored in dp[].
+- This avoids repeated recursive calls.
+
+Algorithm Used:
+- Recursion
+- Dynamic Programming (Top-Down / Memoization)
+
+Time Complexity:
+- O(N)
+
+Space Complexity:
+- O(N)
