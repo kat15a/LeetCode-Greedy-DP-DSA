@@ -1,0 +1,27 @@
+Problem: Perfect Squares
+
+Problem Statement:
+Given an integer n, return the least number of perfect square
+numbers that sum to n.
+
+A perfect square is an integer that is the square of an integer.
+Examples: 1, 4, 9, 16, 25, ...
+
+Task:
+Find the minimum number of perfect squares whose sum equals n.
+
+Approach:
+- Use recursion to try subtracting all possible perfect squares.
+- For each square i*i ≤ n, recursively solve for (n - i*i).
+- Use memoization (DP array) to store previously computed results.
+- The answer is the minimum of all choices.
+
+Algorithm Used:
+- Recursion
+- Dynamic Programming (Top-Down / Memoization)
+
+Time Complexity:
+- O(N √N)
+
+Space Complexity:
+- O(N)
