@@ -1,3 +1,3 @@
-# Greedy Algorithms – Placement Preparation
+# Greedy & DP Algorithms – Placement Preparation
 
-This repository contains Greedy problems solved for interview preparation.
+This repository contains Greedy & DP problems solved for interview preparation.
