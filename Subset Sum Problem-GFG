@@ -1,0 +1,24 @@
+class Solution {
+
+    static Boolean isSubsetSum(int arr[], int sum) {
+        int n = arr.length;
+        Boolean[][] dp = new Boolean[n][sum + 1];
+        return helper(0, arr, sum, n, dp);
+    }
+
+    private static boolean helper(int id, int arr[], int sum, int n, Boolean[][] dp) {
+        if (sum == 0) return true;
+        if (id == n) return false;
+
+        if (dp[id][sum] != null) return dp[id][sum];
+
+        boolean notTake = helper(id + 1, arr, sum, n, dp);
+        boolean take = false;
+
+        if (sum >= arr[id]) {
+            take = helper(id + 1, arr, sum - arr[id], n, dp);
+        }
+
+        return dp[id][sum] = take || notTake;
+    }
+}
