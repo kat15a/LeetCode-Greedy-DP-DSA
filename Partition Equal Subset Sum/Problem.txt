@@ -1,0 +1,28 @@
+Problem: Partition Equal Subset Sum
+
+Problem Statement:
+Given an integer array nums, determine whether the array can be
+partitioned into two subsets such that the sum of elements in
+both subsets is equal.
+
+Task:
+Return true if the array can be divided into two subsets with
+equal sum, otherwise return false.
+
+Approach:
+- First compute the total sum of the array.
+- If the total sum is odd, partition is impossible.
+- Otherwise the target sum for each subset is total / 2.
+- Now check if there exists a subset whose sum equals target.
+- Use recursion with memoization (DP) to solve the subset sum problem.
+
+Algorithm Used:
+- Recursion
+- Dynamic Programming (Top-Down / Memoization)
+- Subset Sum / 0-1 Knapsack Pattern
+
+Time Complexity:
+- O(N × Target)
+
+Space Complexity:
+- O(N × Target)
