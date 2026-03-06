@@ -1,0 +1,32 @@
+Problem: Minimum Falling Path Sum
+
+Problem Statement:
+You are given an n × n integer matrix.
+
+A falling path starts at any element in the first row and chooses
+the element in the next row that is either:
+- directly below
+- diagonally left
+- diagonally right
+
+Task:
+Return the minimum sum of any falling path through the matrix.
+
+Approach:
+- Start from every column in the first row.
+- From each cell (row, col), recursively explore three possible moves:
+  - Down → (row+1, col)
+  - Down-left → (row+1, col-1)
+  - Down-right → (row+1, col+1)
+- Use memoization (DP array) to store results of subproblems.
+- Return the minimum sum among all possible starting columns.
+
+Algorithm Used:
+- Recursion
+- Dynamic Programming (Top-Down / Memoization)
+
+Time Complexity:
+- O(N × N)
+
+Space Complexity:
+- O(N × N)
