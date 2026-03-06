@@ -1,0 +1,42 @@
+class Solution {
+
+    public int minDifference(int arr[]) {
+
+        int n = arr.length;
+
+        int total = 0;
+        for (int x : arr) total += x;
+
+        Boolean[][] dp = new Boolean[n][total + 1];
+
+        int best = 0;
+
+        for (int s = 0; s <= total / 2; s++) {
+
+            if (helper(0, arr, s, n, dp)) {
+                best = s;
+            }
+        }
+
+        return total - 2 * best;
+    }
+
+    private boolean helper(int id, int arr[], int sum, int n, Boolean[][] dp) {
+
+        if (sum == 0) return true;
+
+        if (id == n) return false;
+
+        if (dp[id][sum] != null) return dp[id][sum];
+
+        boolean notTake = helper(id + 1, arr, sum, n, dp);
+
+        boolean take = false;
+
+        if (sum >= arr[id]) {
+            take = helper(id + 1, arr, sum - arr[id], n, dp);
+        }
+
+        return dp[id][sum] = take || notTake;
+    }
+}
