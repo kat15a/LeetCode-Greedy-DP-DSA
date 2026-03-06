@@ -1,0 +1,45 @@
+Problem: Triangle (Minimum Path Sum)
+
+Problem Statement:
+You are given a triangle array where triangle[i][j] represents
+the value at row i and column j.
+
+You start from the top element and move to the bottom row.
+
+At each step, you may move to:
+- the element directly below
+- the element diagonally below-right
+
+Task:
+Return the minimum path sum from top to bottom.
+
+Example:
+triangle = [
+ [2],
+ [3,4],
+ [6,5,7],
+ [4,1,8,3]
+]
+
+Output: 11  
+Path: 2 → 3 → 5 → 1
+
+Approach:
+- Use Bottom-Up Dynamic Programming.
+- Start from the last row and move upwards.
+- For each element:
+
+  dp[level][i] = triangle[level][i] +
+                 min(dp[level+1][i], dp[level+1][i+1])
+
+- The result will be stored at dp[0][0].
+
+Algorithm Used:
+- Dynamic Programming (Tabulation)
+- Bottom-Up Approach
+
+Time Complexity:
+- O(N²)
+
+Space Complexity:
+- O(N²)
