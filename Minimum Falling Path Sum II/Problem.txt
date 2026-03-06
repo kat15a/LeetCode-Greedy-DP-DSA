@@ -1,0 +1,31 @@
+Problem: Minimum Falling Path Sum II
+
+Problem Statement:
+You are given an n × n integer grid.
+
+A falling path starts at any element in the first row and moves to
+the next row until the last row.
+
+Rule:
+When moving to the next row, you cannot choose the element
+from the same column.
+
+Task:
+Return the minimum possible sum of a falling path.
+
+Approach:
+- Start from every column in the first row.
+- From cell (row, col), move to the next row but choose any column
+  except the current column.
+- Use recursion with memoization (DP array) to store results.
+- Track the minimum path sum among all valid paths.
+
+Algorithm Used:
+- Recursion
+- Dynamic Programming (Top-Down / Memoization)
+
+Time Complexity:
+- O(N³)
+
+Space Complexity:
+- O(N²)
