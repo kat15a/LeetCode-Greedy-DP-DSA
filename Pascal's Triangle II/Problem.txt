@@ -1,0 +1,42 @@
+Problem: Pascal's Triangle II
+
+Problem Statement:
+Given an integer rowIndex, return the rowIndex-th (0-indexed)
+row of Pascal's Triangle.
+
+In Pascal's Triangle:
+- The first and last element of each row is 1.
+- Each interior element is the sum of the two elements above it.
+
+Example:
+rowIndex = 3
+
+Pascal Triangle:
+[1]
+[1,1]
+[1,2,1]
+[1,3,3,1]
+
+Output:
+[1,3,3,1]
+
+Approach:
+- Use recursion with memoization to compute Pascal values.
+- For a position (r, c):
+
+  value(r,c) = value(r-1,c-1) + value(r-1,c)
+
+- Base cases:
+  - First column → 1
+  - Last column → 1
+- Store computed values in a DP array to avoid recomputation.
+
+Algorithm Used:
+- Recursion
+- Dynamic Programming (Memoization)
+
+Time Complexity:
+- O(N²)
+
+Space Complexity:
+- O(N²)
