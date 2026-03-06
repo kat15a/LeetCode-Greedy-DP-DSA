@@ -1,0 +1,38 @@
+Problem: Pascal's Triangle
+
+Problem Statement:
+Given an integer numRows, return the first numRows of Pascal's Triangle.
+
+In Pascal's Triangle:
+- The first and last element of each row is 1.
+- Every other element is the sum of the two numbers directly above it.
+
+Example:
+Row 0 → [1]  
+Row 1 → [1,1]  
+Row 2 → [1,2,1]  
+Row 3 → [1,3,3,1]
+
+Task:
+Return the triangle as a list of lists.
+
+Approach:
+- Use recursion with memoization to compute values of Pascal's Triangle.
+- The value at position (r, c) is:
+
+  value(r,c) = value(r-1,c-1) + value(r-1,c)
+
+- Base cases:
+  - First column → 1
+  - Diagonal elements → 1
+- Store computed values in a DP array to avoid recomputation.
+
+Algorithm Used:
+- Recursion
+- Dynamic Programming (Memoization)
+
+Time Complexity:
+- O(N²)
+
+Space Complexity:
+- O(N²)
