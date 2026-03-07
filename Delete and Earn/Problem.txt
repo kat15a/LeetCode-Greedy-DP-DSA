@@ -1,0 +1,32 @@
+Problem: Delete and Earn
+
+Problem Statement:
+You are given an integer array nums.
+
+You can perform the following operation any number of times:
+- Pick any number nums[i] and earn nums[i] points.
+- After picking nums[i], you must delete every element equal to
+  nums[i] - 1 and nums[i] + 1.
+
+Task:
+Return the maximum number of points you can earn.
+
+Approach:
+- If we take a number x, we cannot take x-1 and x+1.
+- This is similar to the House Robber problem.
+- First convert the array into a points array where:
+  points[i] = total value gained from number i.
+- Now apply the House Robber DP logic:
+  - pick → take points[i] and skip i+1
+  - notPick → move to the next index.
+
+Algorithm Used:
+- Dynamic Programming
+- Recursion + Memoization
+- House Robber Pattern
+
+Time Complexity:
+- O(N + MaxValue)
+
+Space Complexity:
+- O(MaxValue)
