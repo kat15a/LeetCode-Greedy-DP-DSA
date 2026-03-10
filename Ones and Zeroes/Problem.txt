@@ -1,0 +1,38 @@
+Problem: Ones and Zeroes
+
+Problem Statement:
+You are given an array of binary strings strs and two integers m and n.
+
+- m → maximum number of '0's you can use
+- n → maximum number of '1's you can use
+
+Task:
+Find the maximum number of strings you can form using at most
+m zeros and n ones.
+
+Each string can be used at most once.
+
+Approach:
+- For each string, count the number of zeros and ones.
+- At each index we have two choices:
+  1. Do not include the current string.
+  2. Include the string if we have enough zeros and ones available.
+- Use recursion with memoization to avoid recomputation.
+- Store results in a 3D DP array:
+  dp[index][remainingZeros][remainingOnes].
+
+Algorithm Used:
+- Dynamic Programming
+- Recursion + Memoization
+- 0/1 Knapsack Pattern (with two constraints)
+
+Time Complexity:
+- O(L × M × N)
+
+Space Complexity:
+- O(L × M × N)
+
+Where:
+L = number of strings
+M = number of zeros allowed
+N = number of ones allowed
