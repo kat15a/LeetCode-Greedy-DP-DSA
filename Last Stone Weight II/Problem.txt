@@ -1,0 +1,43 @@
+Problem: Last Stone Weight II
+
+Problem Statement:
+You are given an array of integers stones where stones[i] 
+represents the weight of the ith stone.
+
+You repeatedly smash two stones together:
+
+- If the stones have equal weight → both are destroyed.
+- If they have different weights → the smaller stone is destroyed
+  and the remaining stone has weight (y - x).
+
+Task:
+Return the smallest possible weight of the last remaining stone.
+If no stones remain, return 0.
+
+Approach:
+- This problem can be converted into a subset partition problem.
+- Let total be the sum of all stones.
+- We try to divide the stones into two groups with sums S1 and S2.
+
+  S1 + S2 = total
+
+- The final remaining weight becomes:
+
+  |S1 - S2|
+
+- To minimize this value, we try to find a subset sum as close
+  as possible to total / 2.
+
+- Use recursion with memoization to explore all possible
+  subset sums.
+
+Algorithm Used:
+- Recursion
+- Dynamic Programming (Top-Down / Memoization)
+- Subset Partition Pattern
+
+Time Complexity:
+- O(N × TotalSum)
+
+Space Complexity:
+- O(N × TotalSum)
