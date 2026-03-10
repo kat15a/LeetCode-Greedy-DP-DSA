@@ -1,0 +1,36 @@
+Problem: Longest Palindromic Subsequence
+
+Problem Statement:
+Given a string s, return the length of the longest palindromic
+subsequence in the string.
+
+A subsequence is a sequence that can be derived from another
+sequence by deleting some or no elements without changing
+the order of the remaining elements.
+
+A palindrome reads the same forward and backward.
+
+Task:
+Find the length of the longest palindromic subsequence.
+
+Approach:
+- A palindrome reads the same forward and backward.
+- If we reverse the string and compute the Longest Common
+  Subsequence (LCS) between the string and its reverse,
+  the result gives the longest palindromic subsequence.
+
+Steps:
+1. Reverse the string.
+2. Compute LCS between the original string and reversed string.
+3. Use recursion with memoization to avoid recomputation.
+
+Algorithm Used:
+- Dynamic Programming
+- Longest Common Subsequence (LCS)
+- Recursion + Memoization
+
+Time Complexity:
+- O(N²)
+
+Space Complexity:
+- O(N²)
