@@ -1,0 +1,35 @@
+Problem: Distinct Subsequences
+
+Problem Statement:
+Given two strings s and t, return the number of distinct
+subsequences of s which equals t.
+
+A subsequence is formed by deleting zero or more characters
+from a string without changing the order of the remaining characters.
+
+Task:
+Count how many different ways string t can be formed from s.
+
+Approach:
+- Use recursion with memoization.
+- At each position we have two choices:
+  1. If characters match → 
+        - take the character → move both pointers
+        - skip the character → move pointer in s only
+  2. If characters do not match →
+        - skip the character in s
+- Base cases:
+  - If t is completely formed → return 1
+  - If s is exhausted before forming t → return 0
+- Store results in DP table to avoid recomputation.
+
+Algorithm Used:
+- Dynamic Programming
+- Recursion + Memoization
+- String DP Pattern
+
+Time Complexity:
+- O(N × M)
+
+Space Complexity:
+- O(N × M)
