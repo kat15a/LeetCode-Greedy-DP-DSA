@@ -1,0 +1,32 @@
+Problem: Shortest Common Supersequence
+
+Problem Statement:
+Given two strings str1 and str2, return the shortest string
+that has both str1 and str2 as subsequences.
+
+If multiple answers exist, return any valid one.
+
+A subsequence is obtained by deleting zero or more characters
+without changing the order of the remaining characters.
+
+Task:
+Construct the shortest common supersequence (SCS).
+
+Approach:
+- First compute the Longest Common Subsequence (LCS) using DP.
+- Then reconstruct the answer by backtracking from dp[n][m]:
+  - If characters match → include it once and move diagonally.
+  - Otherwise move in the direction of the larger LCS value.
+- Add remaining characters after one string is exhausted.
+- Reverse the constructed string to get the final result.
+
+Algorithm Used:
+- Dynamic Programming (Tabulation)
+- Longest Common Subsequence Pattern
+- Backtracking
+
+Time Complexity:
+- O(N × M)
+
+Space Complexity:
+- O(N × M)
