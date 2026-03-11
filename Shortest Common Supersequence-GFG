@@ -1,0 +1,32 @@
+class Solution {
+    public  int minSuperSeq(String s1, String s2) {
+        int n=s1.length();
+        int m=s2.length();
+        int[][] dp=new int[n][m];
+        for(int i=0;i<n;i++){
+            Arrays.fill(dp[i],-1);
+        }
+        return n+m-subsequence(s1,s2,0,0,dp);
+        
+        
+    }
+    private int subsequence(String s1,String s2,int i,int j,int[][] dp){
+        int n=s1.length();
+        int m=s2.length();
+        if(i==n||j==m){
+            return 0;
+        }
+        if(dp[i][j]!=-1){
+            return dp[i][j];
+        }
+        if(s1.charAt(i)==s2.charAt(j)){
+            dp[i][j]=1+subsequence(s1,s2,i+1,j+1,dp);
+            }
+            else{
+            int skip1=subsequence(s1,s2,i,j+1,dp);
+            int skip2=subsequence(s1,s2,i+1,j,dp);
+            dp[i][j]=Math.max(skip1,skip2);
+            }
+            return dp[i][j];
+    }
+}
