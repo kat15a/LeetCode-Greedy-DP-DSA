@@ -1,0 +1,36 @@
+Problem: Painting the Walls
+
+Problem Statement:
+You are given two integer arrays cost and time of length n.
+
+- cost[i] → cost of hiring the ith painter
+- time[i] → number of additional walls that can be painted for free
+            after hiring the ith painter
+
+If you hire painter i:
+- You pay cost[i]
+- One wall is painted by the hired painter
+- Additionally, time[i] walls are painted for free
+
+Task:
+Return the minimum cost required to paint all n walls.
+
+Approach:
+- At each painter we have two choices:
+  1. Do not hire the painter → move to next painter.
+  2. Hire the painter → reduce remaining walls by (1 + time[i])
+     and add cost[i].
+- Use recursion with memoization to compute the minimum cost.
+- DP state:
+    dp[index][remainingWalls]
+
+Algorithm Used:
+- Dynamic Programming
+- Recursion + Memoization
+- Knapsack Style Optimization
+
+Time Complexity:
+- O(N²)
+
+Space Complexity:
+- O(N²)
