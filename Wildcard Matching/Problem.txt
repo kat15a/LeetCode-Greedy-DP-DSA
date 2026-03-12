@@ -1,0 +1,34 @@
+Problem: Wildcard Matching
+
+Problem Statement:
+Given an input string s and a pattern p, implement wildcard matching.
+
+Pattern rules:
+- '?' matches any single character.
+- '*' matches any sequence of characters (including empty).
+
+Task:
+Return true if the entire string s matches the pattern p.
+
+Approach:
+- Use recursion with memoization (DP).
+- At each position:
+  - If characters match or pattern has '?' → move both pointers.
+  - If pattern has '*' → two choices:
+      1. Match '*' with current character → move pointer in s.
+      2. Treat '*' as empty → move pointer in pattern.
+- Base cases:
+  - If both string and pattern are exhausted → match.
+  - If pattern exhausted but string remains → no match.
+  - If string exhausted → remaining pattern must contain only '*'.
+
+Algorithm Used:
+- Dynamic Programming
+- Recursion + Memoization
+- String Pattern Matching
+
+Time Complexity:
+- O(N × M)
+
+Space Complexity:
+- O(N × M)
