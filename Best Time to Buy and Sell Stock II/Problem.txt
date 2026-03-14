@@ -1,0 +1,39 @@
+Problem: Best Time to Buy and Sell Stock II
+
+Problem Statement:
+You are given an integer array prices where prices[i]
+is the price of a stock on the ith day.
+
+You may complete as many transactions as you like
+(buy one and sell one share multiple times).
+
+However:
+- You must sell the stock before you buy again.
+
+Task:
+Return the maximum profit you can achieve.
+
+Approach:
+- At each day we have two states:
+  1. Buy state → we can buy the stock or skip.
+  2. Sell state → we can sell the stock or skip.
+- Use recursion with memoization to store results.
+- DP state:
+    dp[index][buy]
+
+Transitions:
+- Buy:
+    max(-price + next sell state, skip)
+- Sell:
+    max(price + next buy state, skip)
+
+Algorithm Used:
+- Dynamic Programming
+- Recursion + Memoization
+- Stock DP Pattern
+
+Time Complexity:
+- O(N)
+
+Space Complexity:
+- O(N)
