@@ -1,0 +1,17 @@
+Problem: Best Time to Buy and Sell Stock with Cooldown
+
+Problem Statement:
+You are given an integer array prices where prices[i]
+is the price of a stock on the ith day.
+
+You may complete as many transactions as you like,
+but after selling a stock you cannot buy on the next day
+(i.e., cooldown for one day).
+
+Task:
+Return the maximum profit you can achieve.
+
+Approach:
+- Maintain two states:
+  1. Buy state → we can buy or skip.
+  2. Sell
