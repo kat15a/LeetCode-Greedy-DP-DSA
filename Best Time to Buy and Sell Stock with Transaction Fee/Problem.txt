@@ -1,0 +1,36 @@
+Problem: Best Time to Buy and Sell Stock with Transaction Fee
+
+Problem Statement:
+You are given an array prices where prices[i] is the price of a stock on the ith day,
+and an integer fee representing a transaction fee.
+
+You may complete as many transactions as you like, but you must pay the transaction
+fee for each sale.
+
+Task:
+Return the maximum profit you can achieve.
+
+Approach:
+- At each day we maintain two states:
+  1. Buy state → we can buy the stock or skip.
+  2. Sell state → we can sell the stock (pay fee) or skip.
+- Use recursion with memoization to avoid recomputation.
+- DP state:
+    dp[index][buy]
+
+Transitions:
+- Buy:
+    max(-price + next sell state, skip)
+- Sell:
+    max(price - fee + next buy state, skip)
+
+Algorithm Used:
+- Dynamic Programming
+- Recursion + Memoization
+- Stock DP Pattern
+
+Time Complexity:
+- O(N)
+
+Space Complexity:
+- O(N)
