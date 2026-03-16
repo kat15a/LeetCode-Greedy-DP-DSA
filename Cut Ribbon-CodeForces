@@ -1,0 +1,28 @@
+import java.util.*;
+
+public class CutRibbon {
+    static final int INF = 100000000; 
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int N = sc.nextInt();
+        int[] arr = new int[3];
+        for (int i = 0; i < 3; i++) arr[i] = sc.nextInt();
+        int[][] dp = new int[3][N + 1];
+        for (int[] row : dp) Arrays.fill(row, -1);
+
+        int ans = helper(0, N, arr, dp);
+        System.out.println(ans);
+    }
+
+    private static int helper(int i, int length, int[] arr, int[][] dp) {
+        if (length == 0) return 0;
+        if (i == arr.length || length < 0) return -INF;
+
+        if (dp[i][length] != -1) return dp[i][length];
+        int notPick = helper(i + 1, length, arr, dp);
+        int pick = 1 + helper(i, length - arr[i], arr, dp);
+
+        return dp[i][length] = Math.max(pick, notPick);
+    }
+}
