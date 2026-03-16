@@ -1,0 +1,29 @@
+class Solution {
+    public int cutRod(int[] price) {
+        int n = price.length;
+        int[][] dp = new int[n+1][n+1];
+
+        for(int i=0;i<=n;i++){
+            Arrays.fill(dp[i], -1);
+        }
+
+        return helper(0, n, price, dp);
+    }
+
+    private int helper(int id, int length, int[] price, int[][] dp){
+        int n = price.length;
+
+        if(id == n) return 0;
+
+        if(dp[id][length] != -1) return dp[id][length];
+
+        int notTake = helper(id + 1, length, price, dp);
+
+        int take = 0;
+        if(length >= id + 1){
+            take = price[id] + helper(id, length - (id + 1), price, dp);
+        }
+
+        return dp[id][length] = Math.max(take, notTake);
+    }
+}
