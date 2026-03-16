@@ -1,0 +1,34 @@
+class Solution {
+    public int knapSack(int val[], int wt[], int capacity) {
+        
+        int n = val.length;
+        
+        int[][] dp = new int[n][capacity + 1];
+        
+        for(int i = 0; i < n; i++){
+            Arrays.fill(dp[i], -1);
+        }
+        
+        return helper(0, val, wt, capacity, dp);
+    }
+    
+    private int helper(int id, int val[], int wt[], int capacity, int[][] dp){
+        
+        int n = val.length;
+        
+        if(id == n) return 0;
+        
+        if(dp[id][capacity] != -1) 
+            return dp[id][capacity];
+        
+        int notpick = helper(id + 1, val, wt, capacity, dp);
+        
+        int pick = 0;
+        
+        if(wt[id] <= capacity){
+            pick = val[id] + helper(id, val, wt, capacity - wt[id], dp);
+        }
+        
+        return dp[id][capacity] = Math.max(pick, notpick);
+    }
+}
