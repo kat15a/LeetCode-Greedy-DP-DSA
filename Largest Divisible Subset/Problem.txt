@@ -1,0 +1,42 @@
+Problem: Largest Divisible Subset
+
+Given a set of distinct positive integers nums, return the largest subset such that:
+
+For every pair (Si, Sj) of elements in this subset,
+either:
+Si % Sj == 0
+OR
+Sj % Si == 0
+
+If there are multiple solutions, return any one of them.
+
+-----------------------------------
+
+Example 1:
+
+Input:
+nums = [1,2,3]
+
+Output:
+[1,2]
+
+Explanation:
+[1,3] is also a valid answer.
+
+-----------------------------------
+
+Example 2:
+
+Input:
+nums = [1,2,4,8]
+
+Output:
+[1,2,4,8]
+
+-----------------------------------
+
+Constraints:
+
+1 <= nums.length <= 1000
+1 <= nums[i] <= 2 * 10^9
+All the integers in nums are unique.
