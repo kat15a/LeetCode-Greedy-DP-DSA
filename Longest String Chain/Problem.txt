@@ -1,0 +1,38 @@
+Problem: Climbing Stairs
+
+Problem Statement:
+You are climbing a staircase with n steps.
+
+Each time you can either climb:
+- 1 step
+- 2 steps
+
+Task:
+Return the number of distinct ways to reach the top.
+
+Approach:
+
+At every step we have two choices:
+1. Take one step
+2. Take two steps
+
+The number of ways to reach step n is:
+
+ways(n) = ways(n-1) + ways(n-2)
+
+This is because:
+- From step (n-1) we can take one step to reach n
+- From step (n-2) we can take two steps to reach n
+
+We use recursion with memoization (Top-Down Dynamic Programming)
+to store previously computed results and avoid repeated calculations.
+
+Algorithm Used:
+- Recursion
+- Dynamic Programming (Top-Down / Memoization)
+
+Time Complexity:
+O(N)
+
+Space Complexity:
+O(N)
