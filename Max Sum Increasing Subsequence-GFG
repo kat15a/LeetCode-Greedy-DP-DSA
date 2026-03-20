@@ -1,0 +1,25 @@
+class Solution {
+    public int maxSumIS(int arr[]) {
+        // code here
+        int n=arr.length;
+        int[][] dp=new int[n+1][n+1];
+        for(int i=0;i<n;i++){
+            Arrays.fill(dp[i],-1);
+        }
+        return helper(0,-1,arr,dp);
+        
+    }
+    private int helper(int i,int prev,int arr[],int[][] dp){
+        int n=arr.length;
+        int ans=Integer.MIN_VALUE;
+        if(i==n)return 0;
+        if(dp[i][prev+1]!=-1)return dp[i][prev+1];
+        int nottake=helper(i+1,prev,arr,dp);
+        int take=0;
+        if(prev==-1 || arr[prev]<arr[i]){
+            take=arr[i]+helper(i+1,i,arr,dp);
+        }
+        ans=Math.max(ans,Math.max(take,nottake));
+        return dp[i][prev+1]=ans;
+    }
+}
