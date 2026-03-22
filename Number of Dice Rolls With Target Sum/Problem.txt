@@ -1,0 +1,47 @@
+Problem: Number of Dice Rolls With Target Sum
+
+Problem Statement:
+You have n dice, and each die has k faces numbered from 1 to k.
+
+Given three integers n, k, and target, return the number of possible ways (out of the k^n total ways) to roll the dice so that the sum of the face-up numbers equals target.
+
+Since the answer may be very large, return it modulo 10^9 + 7.
+
+Task:
+Compute the total number of ways to obtain the exact target sum using all n dice.
+
+Approach:
+
+* At each step we choose a face value from 1 to k.
+* Reduce the remaining target by the chosen face value.
+* Reduce the number of dice by 1.
+* Use recursion with memoization to avoid recomputation.
+
+DP State:
+dp[diceRemaining][remainingTarget]
+
+Transitions:
+For each face value i from 1 to k:
+
+dp[n][target] =
+sum of dp[n-1][target-i] for all i in [1..k]
+
+Base Cases:
+
+* If target < 0 → return 0
+* If no dice left and target == 0 → return 1
+* If no dice left and target != 0 → return 0
+
+Algorithm Used:
+
+* Dynamic Programming
+* Recursion + Memoization
+* Combinatorial Counting
+
+Time Complexity:
+
+* O(n * k * target)
+
+Space Complexity:
+
+* O(n * target)
