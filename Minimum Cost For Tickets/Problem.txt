@@ -1,0 +1,53 @@
+Problem: Minimum Cost For Tickets
+
+Problem Statement:
+You are given an array days where days[i] represents the ith day of travel,
+and an array costs where:
+
+costs[0] → cost of a 1-day pass
+costs[1] → cost of a 7-day pass
+costs[2] → cost of a 30-day pass
+
+A travel pass allows unlimited travel for the duration of the pass starting
+from the day of purchase.
+
+Task:
+Return the minimum cost required to cover all the given travel days.
+
+Approach:
+
+* At each travel day index we have 3 choices:
+
+  1. Buy a 1-day pass → move to next index.
+  2. Buy a 7-day pass → skip all days covered in next 7 days.
+  3. Buy a 30-day pass → skip all days covered in next 30 days.
+* Use recursion with memoization to avoid recomputation.
+
+DP State:
+dp[index] → minimum cost needed to cover travel from index to end.
+
+Transitions:
+dp[index] =
+min(
+cost_1day + dp[index + 1],
+cost_7day + dp[next index not covered by 7-day pass],
+cost_30day + dp[next index not covered by 30-day pass]
+)
+
+Base Case:
+
+* If index ≥ number of travel days → return 0.
+
+Algorithm Used:
+
+* Dynamic Programming
+* Recursion + Memoization
+* Interval Skipping Technique
+
+Time Complexity:
+
+* O(N)
+
+Space Complexity:
+
+* O(N)
