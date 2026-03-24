@@ -1,0 +1,42 @@
+Problem: Max Uncrossed Lines
+
+Problem Statement:
+You are given two integer arrays nums1 and nums2.
+
+You may draw connecting lines between nums1[i] and nums2[j] such that:
+
+* nums1[i] == nums2[j]
+* The connecting line does not cross any other line.
+* Each element can be used in at most one line.
+
+Task:
+Return the maximum number of uncrossed lines that can be drawn.
+
+Approach:
+
+* This problem follows the Longest Common Subsequence (LCS) pattern.
+* At each pair of indices we have two choices:
+
+  1. If elements match → take the match and move both pointers forward.
+  2. If elements do not match → skip one element from either array.
+* Use recursion with memoization to avoid recomputation.
+* Store results of subproblems using a DP table.
+
+Algorithm Used:
+
+* Recursion
+* Dynamic Programming (Top-Down / Memoization)
+* Longest Common Subsequence Pattern
+
+Time Complexity:
+
+* O(N × M)
+
+Space Complexity:
+
+* O(N × M)
+
+Where:
+
+* N = length of nums1
+* M = length of nums2
