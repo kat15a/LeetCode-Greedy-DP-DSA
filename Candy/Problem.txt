@@ -1,0 +1,36 @@
+Problem: Candy
+
+Problem Statement:
+There are n children standing in a line. Each child is assigned a rating value.
+
+Task:
+Distribute candies such that:
+
+* Each child gets at least one candy.
+* Children with a higher rating than their adjacent neighbors get more candies.
+
+Return the minimum number of candies required.
+
+Approach:
+
+* This problem follows a Greedy strategy with two passes.
+* First pass (left to right):
+
+  * If current child has higher rating than previous, give more candies than previous.
+* Second pass (right to left):
+
+  * If current child has higher rating than next, update candies using max to maintain both conditions.
+* Finally, sum all candies.
+
+Algorithm Used:
+
+* Greedy
+* Two-pass traversal
+
+Time Complexity:
+
+* O(N)
+
+Space Complexity:
+
+* O(N)
