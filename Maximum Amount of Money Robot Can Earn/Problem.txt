@@ -1,0 +1,40 @@
+Problem: Maximum Amount of Money robot Can earn
+
+Problem Statement:
+You are given a 2D grid `coins` where each cell contains some coins (can be positive or negative).
+
+Task:
+Start from the top-left cell (0,0) and reach the bottom-right cell (m-1, n-1).
+You can only move either right or down.
+
+* You are allowed to skip collecting coins from at most 2 cells if their value is negative.
+* If you skip a negative cell, you do not add its value to your total.
+
+Return the maximum amount of coins you can collect.
+
+Approach:
+
+* This problem follows a Grid DP with state tracking.
+* At each cell, we have two choices:
+
+  1. Take the current cell value and move right or down.
+  2. If the cell is negative and skips are available, skip it and move forward.
+* Use recursion with memoization to avoid recomputation.
+* Maintain a state (i, j, k) where:
+
+  * i = row index
+  * j = column index
+  * k = number of skips remaining
+
+Algorithm Used:
+
+* Recursion
+* Dynamic Programming (Top-Down / Memoization)
+* Grid DP with State (i, j, k)
+Time Complexity:
+
+* O(M × N × K)
+
+Space Complexity:
+
+* O(M × N × K)
