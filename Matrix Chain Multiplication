@@ -1,0 +1,19 @@
+class Solution {
+    static int matrixMultiplication(int arr[]) {
+        // code here
+        int n=arr.length;
+        Integer[][] dp=new Integer[n+1][n+1];
+        return helper(arr,1,n-1,dp);
+    }
+    private static int helper(int[] arr,int i,int j,Integer[][] dp){
+        if(i==j)return 0;
+        int min=Integer.MAX_VALUE;
+        if(dp[i][j]!=null)return dp[i][j];
+        for(int k=i;k<j;k++){
+            int c=helper(arr,i,k,dp)+helper(arr,k+1,j,dp)+arr[i-1]*arr[k]*arr[j];
+            min=Math.min(min,c);
+        }
+        return dp[i][j]=min;
+        
+    }
+}
