@@ -1,1 +1,30 @@
+Problem Statement:
+You are given two strings word1 and word2.
 
+Task:
+Return the minimum number of steps required to make both strings equal.
+
+In one step, you can delete a character from either string.
+
+Approach:
+
+This problem follows a variation of the Longest Common Subsequence (LCS) pattern.
+At each step we have two choices:
+If characters match → move both pointers.
+If not match → delete from either string and take minimum.
+Use recursion with memoization to avoid recomputation.
+Count minimum deletions required.
+
+Algorithm Used:
+
+Recursion
+Dynamic Programming (Top-Down / Memoization)
+LCS Pattern
+
+Time Complexity:
+
+O(N × M)
+
+Space Complexity:
+
+O(N × M)
