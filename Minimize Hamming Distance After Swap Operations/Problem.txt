@@ -1,0 +1,36 @@
+Problem: Minimum Hamming Distance After Swap Operations  
+Problem Statement:
+You are given two integer arrays, source and target, both of length n. 
+You are also given a list of allowed swaps where each swap allows you to swap elements 
+at two indices in the source array.
+
+You can perform any number of swaps using the allowed swaps.
+Return the minimum possible Hamming distance between source and target.
+
+Hamming Distance:
+Number of indices where source[i] != target[i].
+
+Approach:
+- Treat indices as nodes in a graph
+- Allowed swaps form edges → build connected components
+- Use Disjoint Set (Union-Find) to group indices
+
+Algorithm Used:
+- Disjoint Set Union (Union-Find)
+- Path Compression
+- Union by Rank
+- HashMap (for frequency counting)
+
+
+Key Insight:
+Within a connected component, we can rearrange elements freely.
+So, we only need to check if target elements can be matched using available source elements in that component.
+
+
+Time Complexity:
+- O(N * α(N)) ≈ O(N)
+  (α(N) = inverse Ackermann function, nearly constant)
+
+
+Space Complexity:
+- O(N)
