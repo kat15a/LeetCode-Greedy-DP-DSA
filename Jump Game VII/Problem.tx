@@ -1,0 +1,33 @@
+Problem: Jump Game VII
+
+Problem Statement:
+You are given a 0-indexed binary string s and two integers minJump and maxJump.
+
+In the beginning, you are standing at index 0, which is equal to '0'.
+
+You can move from index i to index j if:
+- i + minJump <= j <= min(i + maxJump, s.length - 1)
+- s[j] == '0'
+
+Task:
+Return true if you can reach index s.length - 1 in s, or false otherwise.
+
+Approach:
+- Use Sliding Window + Dynamic Programming.
+- dp[i] stores whether index i is reachable.
+- Maintain a sliding count of reachable indices within:
+  
+  [i - maxJump, i - minJump]
+
+- If at least one reachable index exists and s[i] == '0',
+  then dp[i] = true.
+
+Algorithm Used:
+- Sliding Window
+- Dynamic Programming
+
+Time Complexity:
+- O(N)
+
+Space Complexity:
+- O(N)
