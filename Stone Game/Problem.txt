@@ -1,0 +1,38 @@
+Problem: Stone Game
+
+Problem Statement:
+You are given an even-sized integer array `piles` where each element represents the number of stones in a pile.
+
+Task:
+Two players, Alice and Bob, take turns removing an entire pile from either the beginning or the end of the array. Alice moves first, and both players play optimally.
+
+Return `true` if Alice can win the game; otherwise, return `false`.
+
+
+Approach:
+
+* This problem follows the Minimax / Game Theory pattern using Dynamic Programming.
+* At each turn, the current player has two choices:
+
+  1. Pick the leftmost pile.
+  2. Pick the rightmost pile.
+* The opponent also plays optimally to maximize their own score.
+* Use recursion with memoization to compute the maximum score difference the current player can achieve.
+* If the final score difference is positive, Alice wins.
+
+
+Algorithm Used:
+
+* Recursion
+* Dynamic Programming (Top-Down / Memoization)
+* Minimax / Game Theory
+
+
+Time Complexity:
+
+* O(N²)
+
+
+Space Complexity:
+
+* O(N²)
