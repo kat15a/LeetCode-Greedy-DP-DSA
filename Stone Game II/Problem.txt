@@ -1,0 +1,37 @@
+Problem Statement:
+You are given an integer array `piles` where each element represents the number of stones in a pile arranged in a row.
+
+Task:
+Alice and Bob take turns removing stones, with Alice moving first.
+
+* Initially, `M = 1`.
+* On each turn, a player can take the first `X` remaining piles, where `1 <= X <= 2M`.
+* After taking `X` piles, update `M = max(M, X)`.
+* Both players play optimally.
+
+Return the maximum number of stones Alice can collect.
+
+Approach:
+
+* This problem follows the Minimax / Game Theory pattern with Dynamic Programming.
+* Precompute the suffix sum array to quickly calculate the total stones remaining from any index.
+* At each state `(i, M)`, Alice can choose any `X` such that `1 <= X <= 2M`.
+* The opponent (Bob) also plays optimally, minimizing Alice's future gain.
+* Use recursion with memoization to compute the maximum stones Alice can collect from each state.
+
+Algorithm Used:
+
+* Recursion
+* Dynamic Programming (Top-Down / Memoization)
+* Minimax / Game Theory
+* Suffix Sum
+
+
+Time Complexity:
+
+* O(N³)
+
+
+Space Complexity:
+
+* O(N²)
