@@ -1,0 +1,43 @@
+Problem: Stone Game IV
+
+Problem Statement:
+You are given an integer `n` representing the number of stones in a pile.
+
+Task:
+Alice and Bob take turns removing stones, with Alice moving first.
+
+* On each turn, a player can remove any non-zero perfect square number of stones.
+* Both players play optimally.
+* A player who cannot make a move loses the game.
+
+Return `true` if Alice wins the game; otherwise, return `false`.
+
+---
+
+Approach:
+
+* This problem follows the Minimax / Game Theory pattern with Dynamic Programming.
+* At each state, the current player can remove any perfect square number of stones.
+* For every possible move, check whether it forces the opponent into a losing position.
+* If at least one move makes the opponent lose, the current player wins.
+* Use recursion with memoization to avoid recomputing previously solved states.
+
+---
+
+Algorithm Used:
+
+* Recursion
+* Dynamic Programming (Top-Down / Memoization)
+* Minimax / Game Theory
+
+---
+
+Time Complexity:
+
+* O(N × √N)
+
+---
+
+Space Complexity:
+
+* O(N)
