@@ -1,0 +1,51 @@
+Problem: Stone Game III
+
+Problem Statement:
+You are given an integer array `stoneValue` where each element represents the value of a stone.
+
+Task:
+Alice and Bob take turns removing stones, with Alice moving first.
+
+* On each turn, a player can take the first 1, 2, or 3 remaining stones.
+* The player earns the total value of the stones they take.
+* Both players play optimally.
+
+Return:
+
+* `"Alice"` if Alice wins.
+* `"Bob"` if Bob wins.
+* `"Tie"` if both players end with the same score.
+
+---
+
+Approach:
+
+* This problem follows the Minimax / Game Theory pattern with Dynamic Programming.
+* At each index, the current player has three choices:
+
+  1. Take 1 stone.
+  2. Take 2 stones.
+  3. Take 3 stones.
+* The opponent also plays optimally to maximize their own score.
+* Use recursion with memoization to compute the maximum score difference the current player can achieve from each index.
+* If the final score difference is positive, Alice wins; if negative, Bob wins; otherwise, it is a tie.
+
+---
+
+Algorithm Used:
+
+* Recursion
+* Dynamic Programming (Top-Down / Memoization)
+* Minimax / Game Theory
+
+---
+
+Time Complexity:
+
+* O(N)
+
+---
+
+Space Complexity:
+
+* O(N)
