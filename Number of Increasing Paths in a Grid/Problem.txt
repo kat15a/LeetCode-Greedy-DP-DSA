@@ -1,0 +1,43 @@
+Problem: Number of Increasing Paths in a Grid
+
+Problem Statement:
+You are given an `m × n` integer matrix `grid`.
+
+Task:
+A path is considered valid if every next cell has a strictly greater value than the current cell.
+
+* You can move in four directions: up, down, left, and right.
+* A path can start and end at any cell.
+* Return the total number of strictly increasing paths in the grid.
+* Since the answer can be very large, return it modulo `10^9 + 7`.
+
+---
+
+Approach:
+
+* This problem follows the Grid DP pattern with DFS and memoization.
+* Treat each cell as the starting point of an increasing path.
+* From the current cell, move only to adjacent cells having a strictly greater value.
+* Use DFS to count all increasing paths starting from each cell.
+* Store the computed result for each cell using memoization to avoid recomputation.
+* Sum the number of paths starting from every cell.
+
+---
+
+Algorithm Used:
+
+* Depth-First Search (DFS)
+* Dynamic Programming (Top-Down / Memoization)
+* Grid DP
+
+---
+
+Time Complexity:
+
+* O(M × N)
+
+---
+
+Space Complexity:
+
+* O(M × N)
