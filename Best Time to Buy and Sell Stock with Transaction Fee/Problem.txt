@@ -5,7 +5,7 @@ You are given an array prices where prices[i] is the price of a stock on the ith
 and an integer fee representing a transaction fee.
 
 You may complete as many transactions as you like, but you must pay the transaction
-fee for each sale.
+fee for each sales.
 
 Task:
 Return the maximum profit you can achieve.
