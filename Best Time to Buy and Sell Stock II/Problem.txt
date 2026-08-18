@@ -5,7 +5,7 @@ You are given an integer array prices where prices[i]
 is the price of a stock on the ith day.
 
 You may complete as many transactions as you like
-(buy one and sell one share multiple times).
+(buy one and sell one share multiple time).
 
 However:
 - You must sell the stock before you buy again.
