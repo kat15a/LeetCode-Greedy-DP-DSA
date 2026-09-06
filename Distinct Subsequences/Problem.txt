@@ -21,7 +21,7 @@ Approach:
 - Base cases:
   - If t is completely formed → return 1
   - If s is exhausted before forming t → return 0
-- Store results in DP table to avoid recomputation.
+- Store result in DP table to avoid recomputation.
 
 Algorithm Used:
 - Dynamic Programming
