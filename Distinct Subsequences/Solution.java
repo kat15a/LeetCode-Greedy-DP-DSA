@@ -18,7 +18,7 @@ class Solution {
             return dp[i][j]=helper(i+1,j+1,s,t,dp)+helper(i+1,j,s,t,dp);
         }
         else{
-            return dp[i][j]=helper(i+1,j,s,t,dp);
+            return dp[i][j]=helper(i+1,j,s,t,dp)
         }
     }
 }
